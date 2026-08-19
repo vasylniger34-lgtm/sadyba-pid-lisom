@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Coffee, Trees, MapPin, Phone, ChevronRight, Flame, ArrowRight, ShieldCheck, Check } from 'lucide-react';
+import { Home, Coffee, Trees, MapPin, Phone, ChevronRight, Flame, ArrowRight, Check } from 'lucide-react';
 import { ROOMS_DATA } from '../data/roomsData';
 
 interface HomePageProps {
@@ -13,7 +13,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
     <div className="space-y-16 pb-16 bg-[#FAF8F5]">
       
       {/* Minimalist Hero Section */}
-      <section className="pt-12 pb-16 px-4 max-w-7xl mx-auto">
+      <section className="pt-10 pb-16 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left: Text & Actions */}
@@ -31,10 +31,10 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1C2A24] leading-tight"
+              className="font-heading text-4xl sm:text-6xl font-extrabold text-[#1C2A24] leading-tight"
             >
               Відпочинок у серці <br />
-              <span className="text-amber-600">соснового гаю та Бакоти</span>
+              <span className="text-amber-600">Бакоти</span>
             </motion.h1>
 
             <motion.p
@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
               transition={{ delay: 0.2 }}
               className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal"
             >
-              Туристичний комплекс «Садиба під лісом» — затишні дерев’яні номери для проживання та кафе з домашньою українською кухнею.
+              Туристичний комплекс «Садиба під лісом» — затишні дерев’яні номери біля соснового гаю та кафе з домашньою українською кухнею.
             </motion.p>
 
             {/* Actions */}
@@ -88,14 +88,15 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
           >
             <div className="card-clean rounded-3xl overflow-hidden p-3 shadow-sm">
               <div className="aspect-[4/3] rounded-2xl bg-stone-200 overflow-hidden relative">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url('/media/01_Exterior_Territory/IMG_3036.HEIC')` }}
+                <img 
+                  src="/images/bakota/bakota_sunset.jpg" 
+                  alt="Краєвид Бакоти"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1C2A24]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400">Садиба під лісом</span>
-                  <p className="font-heading font-bold text-lg text-white">Затишок, сосни та спокій Бакоти</p>
+                  <p className="font-heading font-bold text-lg text-white">Захід сонця над Бакотською затокою</p>
                 </div>
               </div>
             </div>
@@ -104,15 +105,14 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
         </div>
       </section>
 
-      {/* 2 in 1 Concept Section */}
+      {/* Services Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-10">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Концепція 2 в 1</span>
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1C2A24]">
             Проживання & Домашня Кухня
           </h2>
           <p className="text-slate-500 text-sm max-w-lg mx-auto">
-            Все для комфортного відпочинку в одному місці
+            Все для відпочинку в одному місці
           </p>
         </div>
 
@@ -189,37 +189,47 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Проживання</span>
             <h2 className="font-heading text-3xl font-bold text-[#1C2A24] mt-1">
-              Наші варіанти номерів
+              Наші номери
             </h2>
           </div>
           <button
             onClick={() => setActiveTab('rooms')}
             className="inline-flex items-center gap-1 font-bold text-xs text-amber-700 hover:text-amber-800"
           >
-            <span>Всі номери</span>
+            <span>Дивитися всі номери</span>
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {ROOMS_DATA.map((room) => (
-            <div key={room.id} className="card-clean rounded-3xl p-6 flex flex-col justify-between space-y-4">
-              <div className="space-y-2">
-                <span className="text-[11px] font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-md">
+            <div key={room.id} className="card-clean rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between">
+              <div className="h-48 bg-stone-200 relative overflow-hidden">
+                <img 
+                  src={room.images[0]} 
+                  alt={room.name}
+                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                />
+                <span className="absolute top-3 left-3 text-[11px] font-bold text-amber-900 bg-amber-100/90 backdrop-blur-md px-2.5 py-1 rounded-md shadow-sm">
                   {room.capacity}
                 </span>
-                <h3 className="font-heading text-lg font-bold text-[#1C2A24] pt-1">{room.name}</h3>
-                <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{room.description}</p>
               </div>
 
-              <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
-                <span className="text-sm font-bold text-[#1C2A24]">{room.pricePerNight}</span>
-                <button
-                  onClick={() => openBooking(room)}
-                  className="px-3.5 py-2 bg-[#1C2A24] hover:bg-[#283D34] text-white font-bold rounded-xl text-xs transition-colors"
-                >
-                  Забронювати
-                </button>
+              <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <h3 className="font-heading text-lg font-bold text-[#1C2A24]">{room.name}</h3>
+                  <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{room.description}</p>
+                </div>
+
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
+                  <span className="text-sm font-bold text-[#1C2A24]">{room.pricePerNight}</span>
+                  <button
+                    onClick={() => openBooking(room)}
+                    className="px-3.5 py-2 bg-[#1C2A24] hover:bg-[#283D34] text-white font-bold rounded-xl text-xs transition-colors"
+                  >
+                    Забронювати
+                  </button>
+                </div>
               </div>
             </div>
           ))}

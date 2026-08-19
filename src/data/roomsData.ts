@@ -15,9 +15,9 @@ export const ROOMS_DATA: Room[] = [
       'Вид на тихий сосновий ліс'
     ],
     images: [
-      '/media/02_Rooms_Interior/IMG_2666.HEIC',
-      '/media/02_Rooms_Interior/IMG_2677.HEIC',
-      '/media/03_Details_Decor/IMG_2660.HEIC'
+      '/images/rooms/room_standard.jpg',
+      '/images/rooms/bathroom.jpg',
+      '/images/rooms/room_lighting.jpg'
     ]
   },
   {
@@ -31,12 +31,12 @@ export const ROOMS_DATA: Room[] = [
       'Власний санвузол з усім необхідним',
       'Тераса з видом на захід сонця над Бакотою',
       'Можливість замовлення їжі з кафе прямо в номер',
-      'Москитні сітки та автономне опалення/охолодження'
+      'Москитні сітки та автономне опалення'
     ],
     images: [
-      '/media/02_Rooms_Interior/IMG_0033.HEIC',
-      '/media/02_Rooms_Interior/IMG_2679.HEIC',
-      '/media/01_Exterior_Territory/IMG_3056.HEIC'
+      '/images/rooms/room_comfort.jpg',
+      '/images/rooms/room_cozy.jpg',
+      '/images/bakota/bakota_sunset.jpg'
     ]
   },
   {
@@ -53,9 +53,9 @@ export const ROOMS_DATA: Room[] = [
       'Кафе з домашньою кухнею прямо на подвір’ї'
     ],
     images: [
-      '/media/01_Exterior_Territory/IMG_0052.HEIC',
-      '/media/01_Exterior_Territory/IMG_3036.HEIC',
-      '/media/01_Exterior_Territory/IMG_2704.HEIC'
+      '/images/exterior/terrace.jpg',
+      '/images/bakota/bakota_mountains.jpg',
+      '/images/exterior/forest_sky.jpg'
     ]
   }
 ];

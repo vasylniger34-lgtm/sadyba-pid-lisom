@@ -6,20 +6,20 @@ export const GalleryPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeMedia, setActiveMedia] = useState<{ url: string; type: 'image' | 'video'; title: string } | null>(null);
 
-  // Sample categorized media gallery
+  // Gallery dataset with real web images & videos
   const galleryItems = [
-    { id: '1', title: "Панорамний краєвид гір та сутінків Бакоти", category: 'exterior', type: 'image' as const, url: '/media/01_Exterior_Territory/IMG_3056.HEIC' },
-    { id: '2', title: "Оренда Котеджу під сосновим лісом", category: 'exterior', type: 'image' as const, url: '/media/01_Exterior_Territory/IMG_3036.HEIC' },
-    { id: '3', title: "Літня тераса та альтанка для відпочинку", category: 'exterior', type: 'image' as const, url: '/media/01_Exterior_Territory/IMG_0052.HEIC' },
-    { id: '4', title: "Квітучий сад на подвір’ї садиби", category: 'exterior', type: 'image' as const, url: '/media/01_Exterior_Territory/IMG_0058.HEIC' },
-    { id: '5', title: "Номер Стандарт з сосновим оздобленням", category: 'rooms', type: 'image' as const, url: '/media/02_Rooms_Interior/IMG_2666.HEIC' },
-    { id: '6', title: "Чистий санвузол із феном та зручностями", category: 'rooms', type: 'image' as const, url: '/media/02_Rooms_Interior/IMG_2677.HEIC' },
-    { id: '7', title: "М’яке підсвічування номерів увечері", category: 'rooms', type: 'image' as const, url: '/media/02_Rooms_Interior/IMG_2679.HEIC' },
-    { id: '8', title: "Текстура соснового брусу в інтер’єрі", category: 'details', type: 'image' as const, url: '/media/03_Details_Decor/IMG_2660.HEIC' },
-    { id: '9', title: "Деталі дерев’яного декору та карнизи", category: 'details', type: 'image' as const, url: '/media/03_Details_Decor/IMG_2697.HEIC' },
-    { id: '10', title: "Відео-прогулянка територією садиби", category: 'video', type: 'video' as const, url: '/media/00_Videos/IMG_2922.MOV' },
-    { id: '11', title: "Відео огляд літньої альтанки", category: 'video', type: 'video' as const, url: '/media/00_Videos/IMG_3035.MOV' },
-    { id: '12', title: "Краєвиди Бакоти з тераси", category: 'exterior', type: 'image' as const, url: '/media/01_Exterior_Territory/IMG_3059.HEIC' },
+    { id: '1', title: 'Захід сонця над Бакотською затокою', category: 'exterior', type: 'image' as const, url: '/images/bakota/bakota_sunset.jpg' },
+    { id: '2', title: 'Панорама гірського каньйону Бакоти', category: 'exterior', type: 'image' as const, url: '/images/bakota/bakota_mountains.jpg' },
+    { id: '3', title: 'Літня тераса та альтанка під соснами', category: 'exterior', type: 'image' as const, url: '/images/exterior/terrace.jpg' },
+    { id: '4', title: 'Квітучий сад на подвір’ї садиби', category: 'exterior', type: 'image' as const, url: '/images/exterior/garden.jpg' },
+    { id: '5', title: 'Сосновий ліс та відкрите небо', category: 'exterior', type: 'image' as const, url: '/images/exterior/forest_sky.jpg' },
+    { id: '6', title: 'Номер Стандарт з сосновим зрубом', category: 'rooms', type: 'image' as const, url: '/images/rooms/room_standard.jpg' },
+    { id: '7', title: 'Власний санвузол із феном та зручностями', category: 'rooms', type: 'image' as const, url: '/images/rooms/bathroom.jpg' },
+    { id: '8', title: 'М’яке підсвічування номеру увечері', category: 'rooms', type: 'image' as const, url: '/images/rooms/room_lighting.jpg' },
+    { id: '9', title: 'Номер Сімейний Комфорт', category: 'rooms', type: 'image' as const, url: '/images/rooms/room_comfort.jpg' },
+    { id: '10', title: 'Затишна атмосфера спальної кімнати', category: 'rooms', type: 'image' as const, url: '/images/rooms/room_cozy.jpg' },
+    { id: '11', title: 'Білосніжна постільна білизна', category: 'rooms', type: 'image' as const, url: '/images/rooms/room_details.jpg' },
+    { id: '12', title: 'Панорамний краєвид з балкону', category: 'exterior', type: 'image' as const, url: '/images/bakota/bakota_panorama.jpg' },
   ];
 
   const filteredItems = galleryItems.filter(
@@ -27,37 +27,35 @@ export const GalleryPage: React.FC = () => {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 bg-[#FAF8F5]">
       
       {/* Header */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto">
-        <span className="text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-100 px-3.5 py-1.5 rounded-full">
-          Фото & Відео Галерея
+      <div className="text-center space-y-3 max-w-3xl mx-auto">
+        <span className="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-100 px-3.5 py-1 rounded-full">
+          Фото & Медіа Галерея
         </span>
-        <h1 className="font-heading text-4xl sm:text-5xl font-bold text-forest-950">
+        <h1 className="font-heading text-4xl sm:text-5xl font-bold text-[#1C2A24]">
           Атмосфера Садиби під лісом
         </h1>
         <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-          Перегляньте фотографії номерів, території, лісу та альтанок. Відчуйте затишок Бакоти ще до вашого приїзду.
+          Яскраві краєвиди Бакоти, номери, альтанки та подвір'я. Натисніть на фото для повноформатного перегляду.
         </p>
       </div>
 
       {/* Category Tabs */}
       <div className="flex items-center justify-center gap-2 overflow-x-auto pb-2">
         {[
-          { id: 'all', label: 'Всі медіа' },
-          { id: 'exterior', label: 'Територія & Природа' },
+          { id: 'all', label: 'Всі фото' },
+          { id: 'exterior', label: 'Бакота & Територія' },
           { id: 'rooms', label: 'Номери & Інтер’єр' },
-          { id: 'details', label: 'Деталі & Декор' },
-          { id: 'video', label: 'Відео-огляди' },
         ].map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveCategory(tab.id)}
-            className={`px-5 py-2.5 rounded-2xl font-bold text-xs whitespace-nowrap transition-all ${
+            className={`px-5 py-2 rounded-full font-bold text-xs whitespace-nowrap transition-all ${
               activeCategory === tab.id
-                ? 'bg-forest-900 text-white shadow-md'
-                : 'bg-white text-slate-700 hover:bg-wood-100 border border-wood-200'
+                ? 'bg-[#1C2A24] text-white shadow-md'
+                : 'bg-white text-slate-700 hover:bg-stone-100 border border-stone-200'
             }`}
           >
             {tab.label}
@@ -71,69 +69,59 @@ export const GalleryPage: React.FC = () => {
           <motion.div
             key={item.id}
             layout
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ y: -4 }}
             onClick={() => setActiveMedia({ url: item.url, type: item.type, title: item.title })}
-            className="group relative aspect-video rounded-3xl overflow-hidden bg-forest-950 shadow-md cursor-pointer border border-wood-200"
+            className="card-clean rounded-3xl overflow-hidden cursor-pointer group shadow-sm flex flex-col justify-between"
           >
-            {/* Visual Cover Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-950 via-forest-900/40 to-transparent z-10 opacity-80 group-hover:opacity-60 transition-opacity" />
-            
-            <div className="absolute inset-0 flex items-center justify-center z-20">
-              {item.type === 'video' ? (
-                <div className="w-14 h-14 bg-amber-500 text-forest-950 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                  <Play className="w-6 h-6 fill-current ml-0.5" />
+            <div className="aspect-[4/3] bg-stone-200 relative overflow-hidden">
+              <img 
+                src={item.url} 
+                alt={item.title}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+              
+              <div className="absolute bottom-3 left-3 right-3 text-white z-10 flex items-center justify-between">
+                <span className="text-xs font-bold font-heading truncate">{item.title}</span>
+                <div className="p-1.5 bg-white/20 backdrop-blur-md rounded-full text-white">
+                  <Maximize2 className="w-3.5 h-3.5" />
                 </div>
-              ) : (
-                <div className="w-10 h-10 bg-white/20 backdrop-blur-md text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Maximize2 className="w-5 h-5" />
-                </div>
-              )}
-            </div>
-
-            <div className="absolute bottom-4 left-4 right-4 z-20 space-y-1">
-              <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest">
-                {item.type === 'video' ? 'Відео огляд' : 'Фото садиби'}
-              </span>
-              <p className="font-heading font-bold text-sm text-white group-hover:text-amber-300 transition-colors">
-                {item.title}
-              </p>
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Lightbox / Video Modal */}
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {activeMedia && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-4xl w-full bg-forest-950 rounded-3xl overflow-hidden shadow-2xl border border-forest-800 p-2"
+              className="relative max-w-4xl w-full bg-[#1C2A24] rounded-3xl overflow-hidden shadow-2xl border border-stone-800 p-3"
             >
               <button
                 onClick={() => setActiveMedia(null)}
                 className="absolute top-4 right-4 z-30 p-2 bg-black/60 text-white rounded-full hover:bg-black transition-colors"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
 
-              <div className="aspect-video w-full flex items-center justify-center bg-black rounded-2xl overflow-hidden">
-                {activeMedia.type === 'video' ? (
-                  <video controls autoPlay className="w-full h-full object-contain">
-                    <source src={activeMedia.url} type="video/mp4" />
-                    Ваш браузер не підтримує відео.
-                  </video>
-                ) : (
-                  <div className="text-center p-8 space-y-4">
-                    <Camera className="w-16 h-16 text-amber-400 mx-auto" />
-                    <h3 className="font-heading text-2xl font-bold text-white">{activeMedia.title}</h3>
-                    <p className="text-xs text-forest-200">Фото з архіву Садиби під лісом (Бакота)</p>
-                  </div>
-                )}
+              <div className="aspect-[16/10] w-full flex items-center justify-center bg-black rounded-2xl overflow-hidden">
+                <img 
+                  src={activeMedia.url} 
+                  alt={activeMedia.title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="p-4 text-center text-white space-y-1">
+                <h3 className="font-heading text-lg font-bold">{activeMedia.title}</h3>
+                <p className="text-xs text-stone-400">Садиба під лісом • Бакота</p>
               </div>
             </motion.div>
           </div>
