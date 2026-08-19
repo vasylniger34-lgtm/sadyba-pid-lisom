@@ -6,18 +6,18 @@ export const ROOMS_DATA: Room[] = [
     name: 'Номер «Затишний Стандарт»',
     capacity: '2 гості (двоспальне ліжко)',
     pricePerNight: 'від 1200 грн / доба',
-    description: 'Екологічний номер із натурального дерева (сосновий зруб). Ідеально підходить для пар чи відпочинку вдвох після прогулянок Бакотою.',
+    description: 'Затишний номер з оздобленням з натурального соснового зрубу. Затишна літня тераса під дерев’яним навесом, свіже лісове повітря.',
     features: [
       'Двоспальне ліжко з ортопедичним матрацом',
       'Власний санвузол (душ, туалет, фен)',
       'Свіжа білосніжна білизна та рушники',
-      'Безкоштовний Wi-Fi',
-      'Вид на тихий сосновий ліс'
+      'Літня веранда для відпочинку під соснами',
+      'Безкоштовний Wi-Fi'
     ],
     images: [
-      '/images/rooms/room_standard.jpg',
-      '/images/rooms/bathroom.jpg',
-      '/images/rooms/room_lighting.jpg'
+      '/images/exterior/terrace_main.jpg',
+      '/images/exterior/veranda_garden.jpg',
+      '/images/exterior/rose_garden.jpg'
     ]
   },
   {
@@ -25,18 +25,18 @@ export const ROOMS_DATA: Room[] = [
     name: 'Номер «Сімейний Комфорт»',
     capacity: '3-4 гості (двоспальне + диван)',
     pricePerNight: 'від 1600 грн / доба',
-    description: 'Просторий світлий номер для родини з дітьми або невеликої компанії друзів. Атмосфера затишку із панорамним видом.',
+    description: 'Просторий світлий номер для родини з дітьми або компанії друзів. Панорамний вид на захід сонця над Бакотською затокою з тераси.',
     features: [
       'Двоспальне ліжко + додатковий розкладний диван',
       'Власний санвузол з усім необхідним',
-      'Тераса з видом на захід сонця над Бакотою',
-      'Можливість замовлення їжі з кафе прямо в номер',
+      'Панорамна тераса з видом на Бакоту',
+      'Можливість замовлення їжі з кафе в номер',
       'Москитні сітки та автономне опалення'
     ],
     images: [
-      '/images/rooms/room_comfort.jpg',
-      '/images/rooms/room_cozy.jpg',
-      '/images/bakota/bakota_sunset.jpg'
+      '/images/bakota/bakota_sunset_view.jpg',
+      '/images/exterior/patio.jpg',
+      '/images/exterior/rose_flowers.jpg'
     ]
   },
   {
@@ -44,7 +44,7 @@ export const ROOMS_DATA: Room[] = [
     name: 'Оренда всього Котеджу',
     capacity: 'до 10-12 осіб (велика компанія)',
     pricePerNight: 'від 4500 грн / доба',
-    description: 'Повна приватність для великої родини чи компанії друзів. 2 поверхи, затишні спальні, простора територія біля лісу, мангальна зона та сауна.',
+    description: 'Повна приватність для великої родини чи компанії. Двоповерховий котедж, велика альтанка з мангалом, тераса, сауна та чан.',
     features: [
       'Всі номери садиби в особистому розпорядженні',
       'Власна альтанка з великим столом та мангалом',
@@ -53,9 +53,9 @@ export const ROOMS_DATA: Room[] = [
       'Кафе з домашньою кухнею прямо на подвір’ї'
     ],
     images: [
-      '/images/exterior/terrace.jpg',
-      '/images/bakota/bakota_mountains.jpg',
-      '/images/exterior/forest_sky.jpg'
+      '/images/exterior/veranda_roof.jpg',
+      '/images/bakota/bakota_horizon.jpg',
+      '/images/exterior/forest_trees.jpg'
     ]
   }
 ];

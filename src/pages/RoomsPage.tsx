@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ROOMS_DATA } from '../data/roomsData';
 import { Room } from '../types';
-import { Home, Users, CheckCircle, Wifi, Flame, Sparkles, Phone, Calendar } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Home, Users, CheckCircle, Wifi, Flame, Sparkles, Phone, Calendar, Maximize2, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface RoomsPageProps {
   openBooking: (room: Room) => void;
 }
 
 export const RoomsPage: React.FC<RoomsPageProps> = ({ openBooking }) => {
+  const [activePhoto, setActivePhoto] = useState<{ url: string; title: string } | null>(null);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 bg-[#FAF8F5]">
       
@@ -21,7 +23,7 @@ export const RoomsPage: React.FC<RoomsPageProps> = ({ openBooking }) => {
           Котедж та Номери біля Лісу
         </h1>
         <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-          Номери з натурального соснового зрубу. Насолоджуйтесь свіжим карпатсько-дністровським повітрям, тишею та затишком.
+          Номери з натурального соснового зрубу з власною терасою та альтанками. Натисніть на будь-яке фото для повноформатного перегляду.
         </p>
       </div>
 
@@ -117,33 +119,93 @@ export const RoomsPage: React.FC<RoomsPageProps> = ({ openBooking }) => {
               </div>
             </div>
 
-            {/* Right: Room Photos Grid */}
+            {/* Right: Room Photo Grid with Lightbox Zoom */}
             <div className="lg:col-span-6 grid grid-cols-2 gap-3">
-              <div className="col-span-2 h-56 rounded-2xl overflow-hidden bg-stone-200 shadow-sm border border-stone-200">
+              <div 
+                onClick={() => setActivePhoto({ url: room.images[0], title: room.name })}
+                className="col-span-2 aspect-[16/10] rounded-2xl overflow-hidden bg-stone-200 shadow-sm border border-stone-200 relative cursor-pointer group"
+              >
                 <img 
                   src={room.images[0]} 
                   alt={room.name}
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="p-2 bg-white/80 backdrop-blur-md rounded-full text-[#1C2A24]">
+                    <Maximize2 className="w-5 h-5" />
+                  </div>
+                </div>
               </div>
-              <div className="h-32 rounded-2xl overflow-hidden bg-stone-200 shadow-sm border border-stone-200">
+
+              <div 
+                onClick={() => setActivePhoto({ url: room.images[1], title: `${room.name} - Тераса` })}
+                className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-200 shadow-sm border border-stone-200 relative cursor-pointer group"
+              >
                 <img 
                   src={room.images[1]} 
                   alt={`${room.name} деталі`}
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="p-1.5 bg-white/80 backdrop-blur-md rounded-full text-[#1C2A24]">
+                    <Maximize2 className="w-4 h-4" />
+                  </div>
+                </div>
               </div>
-              <div className="h-32 rounded-2xl overflow-hidden bg-stone-200 shadow-sm border border-stone-200">
+
+              <div 
+                onClick={() => setActivePhoto({ url: room.images[2], title: `${room.name} - Сад` })}
+                className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-200 shadow-sm border border-stone-200 relative cursor-pointer group"
+              >
                 <img 
                   src={room.images[2]} 
-                  alt={`${room.name} санвузол`}
-                  className="w-full h-full object-cover transition-transform hover:scale-105"
+                  alt={`${room.name} сад`}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="p-1.5 bg-white/80 backdrop-blur-md rounded-full text-[#1C2A24]">
+                    <Maximize2 className="w-4 h-4" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {activePhoto && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-4xl w-full bg-[#1C2A24] rounded-3xl overflow-hidden shadow-2xl border border-stone-800 p-3"
+            >
+              <button
+                onClick={() => setActivePhoto(null)}
+                className="absolute top-4 right-4 z-30 p-2 bg-black/60 text-white rounded-full hover:bg-black transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="aspect-[16/10] w-full flex items-center justify-center bg-black rounded-2xl overflow-hidden">
+                <img 
+                  src={activePhoto.url} 
+                  alt={activePhoto.title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <div className="p-4 text-center text-white space-y-1">
+                <h3 className="font-heading text-lg font-bold">{activePhoto.title}</h3>
+                <p className="text-xs text-stone-400">Садиба під лісом • Бакота</p>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </div>
   );
