@@ -1,1 +1,5 @@
-﻿media/00_Videos/
+node_modules
+dist
+media/00_Videos/
+.DS_Store
+*.log
