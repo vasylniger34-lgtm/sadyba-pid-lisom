@@ -167,7 +167,6 @@ export const HomePage: React.FC<HomePageProps> = ({ setActiveTab, openBooking })
               <ul className="space-y-2 text-xs font-medium text-slate-700">
                 <li className="flex items-center gap-2 text-amber-800 font-bold"><Flame className="w-4 h-4 text-amber-600" /> Фірмовий Бограч по п'ятницях!</li>
                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-700" /> Поділ меню на 9 зручних розділів</li>
-                <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-700" /> Відправка замовлення в Telegram</li>
               </ul>
             </div>
 
