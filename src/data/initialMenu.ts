@@ -18,7 +18,7 @@ export const INITIAL_MENU: MenuItem[] = [
     category: 'first',
     price: 140,
     unit: 'порція',
-    description: 'Ароматний та густий суп із кількома видами м’яса, оливамі та лимоном.',
+    description: 'Ароматний та густий суп із кількома видами м’яса, оливками та лимоном.',
     available: true
   },
   {
@@ -191,7 +191,7 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm21',
-    name: 'Котлета по-Київськи',
+    name: 'Котлета по-київськи',
     category: 'meat',
     price: 120,
     unit: 'шт',
@@ -264,7 +264,7 @@ export const INITIAL_MENU: MenuItem[] = [
     available: true
   },
 
-  // На замовлення (Гріль & Мангал)
+  // На замовлення (Гриль & Мангал)
   {
     id: 'm29',
     name: 'Шашлик зі свинини',
@@ -276,7 +276,7 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm30',
-    name: 'Риба на грілі',
+    name: 'Риба на грилі',
     category: 'to_order',
     price: 75,
     unit: '100г',
@@ -285,7 +285,7 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm31',
-    name: 'Овочі гріль',
+    name: 'Овочі гриль',
     category: 'to_order',
     price: 250,
     unit: 'порція',
@@ -303,11 +303,11 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm33',
-    name: 'Курка гріль',
+    name: 'Курка гриль',
     category: 'to_order',
     price: 350,
     unit: 'кг',
-    description: 'Ціла курка гріль із золотистою скоринкою та спеціями.',
+    description: 'Ціла курка гриль із золотистою скоринкою та спеціями.',
     available: true
   },
 
@@ -410,7 +410,7 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm45',
-    name: 'Капучіно',
+    name: 'Капучино',
     category: 'drinks',
     price: 65,
     unit: 'чашка',
@@ -419,7 +419,7 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm46',
-    name: 'Латте',
+    name: 'Лате',
     category: 'drinks',
     price: 80,
     unit: 'чашка',
@@ -428,7 +428,7 @@ export const INITIAL_MENU: MenuItem[] = [
   },
   {
     id: 'm47',
-    name: 'Айс латте',
+    name: 'Айс лате',
     category: 'drinks',
     price: 120,
     unit: 'стакан',
@@ -505,7 +505,7 @@ export const CATEGORIES = [
   { id: 'first', name: 'Перші страви', icon: 'Soup' },
   { id: 'second', name: 'Другі страви', icon: 'Beef' },
   { id: 'meat', name: 'М’ясне & Гаряче', icon: 'Drumstick' },
-  { id: 'to_order', name: 'На замовлення (Гріль)', icon: 'Flame' },
+  { id: 'to_order', name: 'На замовлення (Гриль)', icon: 'Flame' },
   { id: 'pancakes', name: 'Млинці & Сирники', icon: 'CookingPot' },
   { id: 'fry', name: 'Фритюр', icon: 'Popcorn' },
   { id: 'salads', name: 'Салати', icon: 'Salad' },

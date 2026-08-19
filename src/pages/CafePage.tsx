@@ -34,12 +34,12 @@ export const CafePage: React.FC<CafePageProps> = ({
     { id: 'first', title: 'I. Перші страви', subtitle: 'Наваристі традиційні юшки та гарячі супи', icon: Soup },
     { id: 'second', title: 'II. Другі страви', subtitle: 'Бануш, пельмені, вареники, картопелька та піца', icon: Beef },
     { id: 'meat', title: 'М’ясні та гарячі страви', subtitle: 'Відбивні, котлети по-київськи, шакшука та сніданки', icon: Drumstick },
-    { id: 'to_order', title: 'Страви на замовлення (Гріль & Мангал)', subtitle: 'Шашлик, риба, стейк та курка гріль на дровах', icon: Flame },
+    { id: 'to_order', title: 'Страви на замовлення (Гриль & Мангал)', subtitle: 'Шашлик, риба, стейк та курка гриль на дровах', icon: Flame },
     { id: 'pancakes', title: 'Млинці & Сирники', subtitle: 'Ніжні домашні млинчики з різними начинками та сирники', icon: CookingPot },
     { id: 'fry', title: 'Фритюр', subtitle: 'Хрустка картопля фрі, нагетси та сирні палички', icon: Popcorn },
     { id: 'salads', title: 'Салати', subtitle: 'Свіжі овочі з власного городу та легкі салати', icon: Salad },
     { id: 'sauces', title: 'Соуси та доповнення', subtitle: 'Ароматні фірмові соуси та домашня сметанка', icon: Sparkles },
-    { id: 'drinks', title: 'Напої & Літні ласощі', subtitle: 'Ароматна кава, айс-латте, коктейлі, квас, вата та попкорн', icon: Coffee },
+    { id: 'drinks', title: 'Напої & Літні ласощі', subtitle: 'Ароматна кава, айс-лате, коктейлі, квас, вата та попкорн', icon: Coffee },
   ];
 
   const filteredSections = SECTIONS.filter(
@@ -114,7 +114,7 @@ export const CafePage: React.FC<CafePageProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Шукати страву (наприклад: Бограч, Бануш, Шашлик, Латте)..."
+              placeholder="Шукати страву (наприклад: Бограч, Бануш, Шашлик, Лате)..."
               className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#EFE5D5] rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm"
             />
           </div>
