@@ -167,6 +167,7 @@ export const INITIAL_MENU: MenuItem[] = [
     price: 100,
     unit: 'порція',
     description: 'Пухкі домашні сирники з домашнього сиру. Подаються зі сметаною або джемом.',
+    image: '/images/dishes/сирники.jpg',
     available: true
   },
 

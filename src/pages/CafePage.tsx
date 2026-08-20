@@ -161,30 +161,40 @@ export const CafePage: React.FC<CafePageProps> = ({
                         layout
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className={`p-6 rounded-3xl border flex flex-col justify-between space-y-4 transition-all ${
+                        className={`rounded-3xl border flex flex-col justify-between overflow-hidden transition-all ${
                           isFridaySpecial
                             ? 'bg-gradient-to-b from-amber-500/10 to-white border-amber-500/50 shadow-md ring-2 ring-amber-500/30'
                             : 'bg-white border-[#EFE5D5] shadow-sm hover:shadow-md'
                         }`}
                       >
-                        <div className="space-y-2">
-                          <div className="flex items-start justify-between gap-2">
-                            <h3 className="font-heading text-lg font-bold text-[#1C3026]">
-                              {item.name}
-                            </h3>
-                            {isFridaySpecial && (
-                              <span className="px-2.5 py-1 bg-amber-500 text-forest-950 font-black text-[10px] uppercase rounded-full shadow-sm flex items-center gap-1 shrink-0">
-                                <Flame className="w-3 h-3" /> Лише Пт
-                              </span>
+                        {item.image && (
+                          <div className="h-44 w-full bg-stone-200 overflow-hidden relative">
+                            <img 
+                              src={item.image} 
+                              alt={item.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        )}
+                        <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                          <div className="space-y-2">
+                            <div className="flex items-start justify-between gap-2">
+                              <h3 className="font-heading text-lg font-bold text-[#1C3026]">
+                                {item.name}
+                              </h3>
+                              {isFridaySpecial && (
+                                <span className="px-2.5 py-1 bg-amber-500 text-forest-950 font-black text-[10px] uppercase rounded-full shadow-sm flex items-center gap-1 shrink-0">
+                                  <Flame className="w-3 h-3" /> Лише Пт
+                                </span>
+                              )}
+                            </div>
+
+                            {item.description && (
+                              <p className="text-xs text-slate-600 leading-relaxed">
+                                {item.description}
+                              </p>
                             )}
                           </div>
-
-                          {item.description && (
-                            <p className="text-xs text-slate-600 leading-relaxed">
-                              {item.description}
-                            </p>
-                          )}
-                        </div>
 
                         {/* Price & Action */}
                         <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
@@ -215,9 +225,9 @@ export const CafePage: React.FC<CafePageProps> = ({
                             ) : (
                               'Стоп-лист'
                             )}
-                          </button>
                         </div>
-                      </motion.div>
+                      </div>
+                    </motion.div>
                     );
                   })}
                 </div>
