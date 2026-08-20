@@ -225,6 +225,7 @@ export const CafePage: React.FC<CafePageProps> = ({
                             ) : (
                               'Стоп-лист'
                             )}
+                          </button>
                         </div>
                       </div>
                     </motion.div>
