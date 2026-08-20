@@ -15,17 +15,15 @@ export const ROOMS_DATA: Room[] = [
       'Безкоштовний Wi-Fi'
     ],
     images: [
+      '/images/rooms/room1/IMG_3070.jpg',
       '/images/rooms/room1/IMG_2724.jpg',
-      '/images/rooms/room1/IMG_2730.jpg',
-      '/images/rooms/room1/IMG_2731.jpg',
       '/images/rooms/interior/душ.jpg',
-      '/images/rooms/interior/туалет.jpg',
-      '/images/rooms/interior/раковина.jpg'
+      '/images/rooms/interior/туалет.jpg'
     ]
   },
   {
     id: 'room-2',
-    name: 'Номер «Сімейний Комфорт» (Кімната 2)',
+    name: 'Номер «Сімейний Комфорт» (Номер 2)',
     capacity: '3-4 гості (двоспальне + ліжка)',
     pricePerNight: 'від 1600 грн / доба',
     description: 'Просторий світлий номер для родини чи компанії. Комфортні ліжка, затишне освітлення та доступ до літньої кухні та тераси.',
@@ -37,9 +35,8 @@ export const ROOMS_DATA: Room[] = [
       'Автономне опалення та Wi-Fi'
     ],
     images: [
-      '/images/rooms/room2/ліжка.jpg',
-      '/images/rooms/room2/IMG_3048.jpg',
       '/images/rooms/room2/IMG_3051.jpg',
+      '/images/rooms/room2/ліжка.jpg',
       '/images/rooms/kitchen/кухня.jpg',
       '/images/rooms/kitchen/раковина_на_кухні.jpg'
     ]
@@ -58,12 +55,10 @@ export const ROOMS_DATA: Room[] = [
       'Парковка та дитячий майданчик'
     ],
     images: [
-      '/images/rooms/interior/два_ліжка.jpg',
-      '/images/rooms/interior/ше_два_ліжка.jpg',
       '/images/rooms/kitchen/кухня.jpg',
+      '/images/rooms/interior/два_ліжка.jpg',
       '/images/territory/стіл_на_балконі_з_видом_на_краєвиди.jpg',
-      '/images/territory/вечірнє_кафе_зсередини.jpg',
-      '/images/territory/територія_з_квітами.jpg'
+      '/images/territory/вечірнє_кафе_зсередини.jpg'
     ]
   }
 ];
