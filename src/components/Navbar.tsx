@@ -92,15 +92,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </button>
 
-            {/* Admin Key */}
-            <button
-              onClick={openAdmin}
-              className="p-2 text-slate-400 hover:text-[#1C2A24] rounded-full transition-colors"
-              title="Адмін панель (Садиба1872)"
-            >
-              <Lock className="w-4 h-4" />
-            </button>
-
             {/* Mobile Menu Icon */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

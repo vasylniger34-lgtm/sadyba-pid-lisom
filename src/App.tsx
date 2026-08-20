@@ -60,6 +60,28 @@ export function App() {
     localStorage.setItem('sadyba_tg_chat', telegramChatId);
   }, [telegramChatId]);
 
+  // Admin Route / Hash Listener (Direct link access via /#admin or ?admin)
+  useEffect(() => {
+    const checkAdminRoute = () => {
+      const hash = window.location.hash.toLowerCase();
+      const pathname = window.location.pathname.toLowerCase();
+      const search = window.location.search.toLowerCase();
+      if (hash === '#admin' || hash === '#/admin' || pathname.endsWith('/admin') || search.includes('admin')) {
+        setIsAdminOpen(true);
+      }
+    };
+    checkAdminRoute();
+    window.addEventListener('hashchange', checkAdminRoute);
+    return () => window.removeEventListener('hashchange', checkAdminRoute);
+  }, []);
+
+  const closeAdmin = () => {
+    setIsAdminOpen(false);
+    if (window.location.hash.toLowerCase().includes('admin') || window.location.search.toLowerCase().includes('admin')) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  };
+
   // Cart Operations
   const addToCart = (item: MenuItem) => {
     setCartItems(prev => {
@@ -148,7 +170,7 @@ export function App() {
       {/* Protected Admin Panel Modal (Password: Садиба1872) */}
       <AdminModal
         isOpen={isAdminOpen}
-        onClose={() => setIsAdminOpen(false)}
+        onClose={closeAdmin}
         menuItems={menuItems}
         setMenuItems={setMenuItems}
         telegramBotToken={telegramBotToken}

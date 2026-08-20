@@ -135,15 +135,8 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openAdmin }) => {
 
       </div>
 
-      {/* Bottom Legal / Credits */}
       <div className="border-t border-forest-900 py-6 px-4 text-center text-xs text-forest-400 flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-3">
         <p>© 2026 Садиба під лісом. Усі права захищено. Курорт Бакота, Стара Ушиця.</p>
-        <button
-          onClick={openAdmin}
-          className="flex items-center gap-1.5 text-forest-400 hover:text-amber-400 text-[11px] transition-colors"
-        >
-          <ShieldCheck className="w-3.5 h-3.5" /> Панель адміністратора (Садиба1872)
-        </button>
       </div>
     </footer>
   );
